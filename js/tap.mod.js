@@ -14,10 +14,10 @@
         this.startX = 0; //starting x coordinate
         this.startY = 0; //starting y coordinate
         this.hasTouchEventOccured = false; //flag touch event
-        el.addEventListener('touchstart', this, false);
-        el.addEventListener('touchmove', this, false);
+        //el.addEventListener('touchstart', this, false);
+        //el.addEventListener('touchmove', this, false);
         el.addEventListener('touchend', this, false);
-        el.addEventListener('touchcancel', this, false);
+        //el.addEventListener('touchcancel', this, false);
         //el.addEventListener('mousedown', this, false);
         //el.addEventListener('mouseup', this, false);
     }
@@ -80,22 +80,23 @@
     Tap.prototype.destroy = function () {
         var el = this.element;
         el.removeEventListener('touchstart', this, false);
-        el.removeEventListener('touchmove', this, false);
-        el.removeEventListener('touchend', this, false);
-        el.removeEventListener('touchcancel', this, false);
+        //el.removeEventListener('touchmove', this, false);
+        //el.removeEventListener('touchend', this, false);
+        //el.removeEventListener('touchcancel', this, false);
         //el.removeEventListener('mousedown', this, false);
         //el.removeEventListener('mouseup', this, false);
         this.element = null;
     };
 
-    Tap.prototype.handleEvent = function (e) {
+    Tap.prototype.handleEvent = function (e) { cl(e.type);
         switch (e.type) {
-        case 'touchstart': this.start(e); break;
-        case 'touchmove': this.move(e); break;
-        case 'touchend': this.end(e); break;
-        case 'touchcancel': this.cancel(e); break;
-        //case 'mousedown': this.start(e); break;
-        //case 'mouseup': this.end(e); break;
+            case 'onclick': this.start(e); break;
+            case 'onmousedown': this.start(e); break;
+            case 'touchmove': this.move(e); break;
+            case 'touchend': this.end(e); break;
+            case 'touchcancel': this.cancel(e); break;
+            case 'mousedown': this.start(e); break;
+            case 'mouseup': this.end(e); break;
         }
     };
 

@@ -70,11 +70,11 @@ getqsu: function(){
 
 ansReact: function(id,curp){
 	if(id==this.rightans) {
-	cl('+');
-	this.rightanscount++;
-	if(curp==0) this.play(); else this.playu();
+        cl('+');
+        this.rightanscount++;
+        if(curp==0) this.play(); else this.playu();
 	} else {
-	if(curp==0) this.play(); else this.playu();
+        if(curp==0) this.play(); else this.playu();
 	}
 },
 

@@ -3,43 +3,60 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <link rel=stylesheet type=text/css href=style.css>
+    <script src=js/standart.js></script>  
     <script src=js/tap.mod.js></script>
-	<script src=js/main.js></script>  
+	<script src=js/main.js></script>
 </head>
 <body>
+<div id=qs style=display:none>
+Как белые медведи охотятся на пингвинов?
+Поджидают пингвинов в воде
+Подкрадываются к стае, стараясь слиться со льдом и снегом
+Быстро подбегают и хватают первого попавшегося, пока тот не нырнул в воду
+Да никак не охотятся, вы чего +
+
+Какой статьи нет в Конституции России?
+Каждый имеет право на жизнь
+Носителем суверенитета и единственным источником власти в Российской Федерации является ее многонациональный народ
+Российская Федерация — суверенное и независимое, демократическое, социальное, унитарное, правовое государство+
+Российская Федерация — светское государство. Никакая религия не может устанавливаться в качестве государственной или обязательной
+</div>
 <div id=div_main align=center>
-<div id=div_addh class=div_header align=center><img ontouchend=page.open('main') class=img_headl src=img/back.png style=visibility:hidden> <span id=htitle>QUIZ</span> <img id=img_headr ontouchend=page.open('show') class=img_headr src='img/show.png'></div>
+<div id=div_addh class=div_header align=center><img tap=page.open('main') class=img_headl src=img/back.png style=visibility:hidden> <span id=htitle>QUIZ</span> <img id=img_headr tap=page.open('show') class=img_headr src='img/show.png'></div>
 <p><br><p><br><p>
-<img width=152 src=img/play.png ontouchend=page.open('play')>
+<img width=152 src=img/play.png tap=page.open('play')>
 <p><br><p>
 <p>
 <br>
-<div class=button id=addq ontouchend=page.open('add')>Добавить вопрос</div>
+<div class=button id=addq tap=page.open('add')>Добавить вопрос</div>
 <br><p>
-<div class=button ontouchend=quizApp.res()>Результаты</div><p>
+<div class=button tap=quizApp.res()>Результаты</div><p>
 </div>
 
 <div align=center>
 <!--- РLAY --->
 <div id=div_play align=center style=display:none>
-<div id=div_addh class=div_header align=center><img ontouchend=page.open('main') class=img_headl src=img/back.png> <span id=htitle>QUIZ</span> <span id=ra></span><img id=img_headr ontouchend=page.open('show') class=img_headr src='img/star.png'></div>
+<div id=div_addh class=div_header align=center><img tap=page.open('main') class=img_headl src=img/back.png> <span id=htitle>QUIZ</span> <span id=ra></span><img id=img_headr tap=page.open('show') class=img_headr src='img/star.png'></div>
 <p><div id=div_cq><img style=position:relative;top:4px src=img/question.png width=32><span id=cq></span></div><p>
 <div id=div_qs></div>
 <div id=div_anss></div>
 </div>
 <!--- РLAY --->
 <!--- Ре3улЬтат --->
-<div id=resw ontouchend=quizApp.closeres()>
+<div id=resw tap=quizApp.closeres() onclick=quizApp.closeres()>
 <div id=div_res style=display:none>
-<div id=res><p><br>Тест  ещё не пройдён!<br>
+<div id=res>
+<div id=resinner>
+<p><br>Тест  ещё не пройдён!<br>
 <p><br><p>
+</div>
 <div class=button>OK</div></div>
 </div>
 </div>
 <!--- Ре3улЬтат --->
 <!--- Добавление --->
 <div id=div_add style=display:none>
-<div id=div_addh class=div_header align=center><img id=img_addb ontouchend=page.open('main') class=img_headl src=img/back.png> <span id=htitle>QUIZ</span> <span id=ra></span><img id=img_add class=img_headr ontouchend=quizApp.add() class=img_headr src='img/ok.png'></div>
+<div id=div_addh class=div_header align=center><img id=img_addb tap=page.open('main') class=img_headl src=img/back.png> <span id=htitle>QUIZ</span> <span id=ra></span><img id=img_add class=img_headr tap=quizApp.add() class=img_headr src='img/ok.png'></div>
 <textarea id=q placeholder=Вопрос></textarea><br>
 <textarea id=a1 placeholder='Ответ №1'></textarea><br>
 <textarea id=a2 placeholder='Ответ №2'></textarea><br>
@@ -49,18 +66,68 @@
 <!--- Добавление --->
 <!--- Список --->
 <div id=div_show style=display:none>
-<div id=div_addh class=div_header align=center><img ontouchend=page.open('main') class=img_headl src=img/back.png> <span id=htitle>QUIZ</span> <span id=ra></span><img id=img_headr ontouchend=page.open('del') class=img_headr src='img/pencil.png'></div><p>
+<div id=div_addh class=div_header align=center><img tap=page.open('main') class=img_headl src=img/back.png> <span id=htitle>QUIZ</span> <span id=ra></span><img id=img_headr tap=page.open('del') class=img_headr src='img/pencil.png'></div><p>
 <div id=div_questions></div>
 </div>
 <!--- Список --->
 
 <!--- Редакт. --->
 <div id=div_del style=display:none>
-<div id=div_addh class=div_header align=center><img ontouchend=page.open('show') class=img_headl src=img/back.png> <span id=htitle>QUIZ</span> <span id=ra></span><img id=img_headr ontouchend=quizApp.delAction() class=img_headr src='img/del.png'></div><p>
+<div id=div_addh class=div_header align=center><img tap=page.open('show') class=img_headl src=img/back.png> <span id=htitle>QUIZ</span> <span id=ra></span><img id=img_headr tap=quizApp.delAction() class=img_headr src='img/del.png'></div><p>
 <div id=div_delquestions></div>
 </div>
 <!--- Редакт. --->
-<!--<input type=button value='Удалить все' ontouchend='localStorage.clear();window.location.reload()'>
-<input type=button value='Рефрешнуть' ontouchend='window.location.reload()'>--->
+<!--<input type=button value='Удалить все' tap='localStorage.clear();window.location.reload()'>
+<input type=button value='Рефрешнуть' tap='window.location.reload()'>--->
+
+<script> // tap=page.open('add')
+function tapInit(){
+    //var el = document.querySelector("div.user-panel.main input[name=login]");
+    var els = document.querySelectorAll("*");    
+    //var links = document.getElementsByTagName('script');
+    for (i=0;i<els.length;i++) {    
+        //if(links[i].src.match(/soundmanager/)) {          links[i].parentNode.removeChild(links[i]);        }
+        if(els[i].getAttribute('tap') != null) {
+            //cl(els[i].getAttribute('tap'));
+            myTap = new Tap(els[i]); 
+            //eval(e.srcElement.getAttribute('tap'));
+            els[i].addEventListener('tap', onTap, false);
+            //cl(els[i].getAttribute('tap'));
+            //els[i].addEventListener('tap', els[i].getAttribute('tap'), false);
+            //els[i].addEventListener('tap', 'javascript:'+els[i].getAttribute('tap'), false);
+        }
+    }
+}
+tapInit();
+
+//cl(Tap);
+//cl(window['Tap']);
+//cl(this['page.open']);
+//cl(window['page.open']);
+
+var el = document.getElementById('addq');
+myTap = new Tap(el);
+//el.addEventListener('tap', onTap, false);
+//cl(el.getAttribute('tap'));
+//cl(page);
+//page.open('add');
+//po = eval("page.open('add')");
+po = "page.open('add')";
+//cl(this[po]);
+//cl(window[po]);
+//el.addEventListener('tap', this[po], false);
+//el.addEventListener('tap', window[po], false);
+el.addEventListener('tap', onTap, false);
+//el.addEventListener('tap', el.getAttribute('tap'), false);
+//el.addEventListener("click", eval(el.getAttribute('tap')), false);
+
+function onTap (e) {
+    //cl(e.srcElement.getAttribute('tap'));
+    eval(e.srcElement.getAttribute('tap'));
+    //window["page"]["open"]('add'); //eval(); //cl(e); //page.open('add');
+}
+
+</script>
+
 </body>
 </html>
